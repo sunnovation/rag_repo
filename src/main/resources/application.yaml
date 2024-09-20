@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: ics
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ics
+    username: postgres
+    password: postgres
+  ai:
+   openai:
+     api-key: ${OPENAI_API_KEY}
+     base-url: https://api.openai.com
+     chat:
+       base-url: https://api.openai.com
+       options:
+         model: gpt-4o
+     embedding:
+       options:
+         model: text-embedding-3-small
+   vectorstore:
+    pgvector:
+      index-type: HNSW
+      distance-type: COSINE_DISTANCE
+      dimensions: 768
